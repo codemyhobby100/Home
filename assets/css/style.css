@@ -8,6 +8,7 @@
   /**
    * colors
    */
+   --hue-color: 190;
 
   --sky-blue-crayola: hsl(188, 64%, 60%);
   --raisin-black_90: hsla(240, 8%, 12%, 0.9);
@@ -27,6 +28,9 @@
   --black: hsl(0, 0%, 0%);
   --onyx: hsl(240, 5%, 26%);
   --jet: hsl(0, 0%, 21%);
+  --text-color:hsl(225, 8%, 48%);
+  --text-color-light: hsl(var(--hue-color), 8%, 60%);
+  --input-color: hsl(var(--hue-color), 24%, 97%);
 
   /**
    * gradient
@@ -156,9 +160,6 @@ body {
 ::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
 
 ::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
-
-
-
 
 
 /*-----------------------------------*\
@@ -321,10 +322,6 @@ body {
   background-size: cover;
 }
 
-
-
-
-
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -357,6 +354,11 @@ body {
   color: var(--raisin-black-1);
   font-size: 3.6rem;
   font-weight: var(--fw-700);
+}
+
+.logo-img{
+  width: 120px;
+  height: 40px;
 }
 
 .nav-open-btn {
@@ -433,16 +435,13 @@ body {
   pointer-events: all;
 }
 
-
-
-
-
-
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
 
-.hero { padding-block-start: calc(var(--section-padding) + 60px); }
+.hero { 
+  padding-block-start: calc(var(--section-padding) + 60px); 
+}
 
 .hero .container {
   display: grid;
@@ -471,18 +470,26 @@ body {
   transition: var(--transition-1);
 }
 
-.hero-btn:is(:hover, :focus) { color: var(--majorelle-blue); }
+.hero-btn:is(:hover, :focus) {
+  color: var(--majorelle-blue); 
+}
 
-.hero-btn ion-icon { font-size: 24px; }
+.hero-btn ion-icon {
+  font-size: 24px; 
+}
 
 .hero-btn .span {
   font-size: var(--fs-6);
   font-weight: var(--fw-500);
 }
 
-.hero .social-link .span { display: none; }
+.hero .social-link .span {
+  display: none; 
+}
 
-.hero .social-list { gap: 12px; }
+.hero .social-list { 
+  gap: 12px; 
+}
 
 .hero .social-link {
   background-color: var(--white);
@@ -497,10 +504,6 @@ body {
   background-color: var(--color);
   color: var(--white);
 }
-
-
-
-
 
 /*-----------------------------------*\
   #SERVICE
@@ -568,8 +571,30 @@ body {
 .service .link-card:is(:hover, :focus) ion-icon { color: hsl(var(--color)); }
 
 
+/*=============== SPONSORS ===============*/
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.sponsor-section {
+  padding: 4.5rem 0 2.5rem;
+}
+.sponsor__container {
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)) !important;
+  justify-items: center;
+  row-gap: 3.5rem;
+}
+
+.sponsor__title{
+  text-align: center;
+  color: var(--raisin-black-1);
+}
 
 
+.sponsor__img {
+  width: 100px;
+}
 
 /*-----------------------------------*\
   #FEATURE
@@ -684,50 +709,133 @@ body {
   transform: translateY(-50%);
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #NEWSLETTER
-\*-----------------------------------*/
-
-.newsletter { color: var(--white); }
-
-.newsletter .container {
-  display: grid;
-  gap: 50px;
+/*============== STATS ===============*/
+.stats { 
+  background-color: var(--cultured-2); 
 }
 
-.newsletter-banner { max-width: max-content; }
-
-.newsletter .section-subtitle { color: var(--light-gray); }
-
-.newsletter .section-title {
-  color: var(--white);
-  margin-block: 20px 35px;
+.stats-banner {
+  max-width: max-content;
+  margin-inline: auto;
+  aspect-ratio: 1 / 0.78;
+  margin-block-end: 25px;
 }
 
-.email-field {
+.stats-list {
+  display: grid !important;
+  /* grid-template-rows: (2, 1fr); */
+  gap: 25px;
+}
+
+.stats-item {
+  position: relative;
+  padding-block: 5px;
+  padding-inline-start: 15px;
+}
+
+.stats-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.stats-item.purple::before { background-color: var(--mustard); }
+
+.stats-item.red::before { background-color: var(--bittersweet); }
+
+.stats-item.green::before { background-color: var(--blue-ryb_80); }
+
+.stats-item.yellow::before { background-color: #82cc33; }
+
+.stats-item .item-title {
+  color: var(--black);
+  font-size: 3.5rem;
+  font-weight: var(--fw-900);
+  margin-block-end: 5px;
+}
+
+.stats-item .item-title .span {
+  color: var(--granite-gray);
+  font-weight: var(--fw-400);
+  display: inline-block;
+  font-size: var(--fs-4);
+}
+
+
+
+/*=============== SUBSCRIBE ===============*/
+
+.subscribe-container {
+  max-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.subscribe-section {
+  padding: 4.5rem 0 2.5rem !important;
+}
+
+.subscribe__bg {
   background-color: var(--majorelle-blue);
-  color: var(--white);
-  font-size: var(--fs-9);
-  min-height: 60px;
-  padding-inline: 20px;
-  border-radius: var(--radius-8);
-  margin-block-end: 20px;
-  box-shadow: var(--shadow-5);
-  outline: 3px solid transparent;
-  outline-offset: 0;
-  transition: var(--transition-1);
+  padding: 2.5rem 0;
 }
 
-.email-field:focus { outline-color: var(--white); }
+.subscribe__title, 
+.subscribe__description {
+  color: #fff;
+}
 
-.email-field::placeholder { color: inherit; }
+.subscribe__description {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
 
+.subscribe__form {
+  background-color: var(--input-color);
+  padding: .5rem;
+  display: flex;
+  justify-content: space-between;
+}
 
+.subscribe__input {
+  width: 70%;
+  padding-right: .5rem;
+  background-color: var(--input-color);
+  color: var(--text-color);
+}
 
+.subscribe__input::placeholder {
+  color: var(--text-color);
+}
+
+.subscribe-btn{
+  background-color: var(--mustard);
+}
+
+.subscribe-section__title {
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+  display: inline-block;
+  background-color:var(--mustard);
+  color: #fff;
+  padding: 1rem 2rem;
+  font-weight: var(--font-semi-bold);
+  transition: .3s;
+}
+
+.button:hover {
+  background-color: var(--raisin-black-1);
+}
 
 
 /*-----------------------------------*\
@@ -1199,6 +1307,15 @@ footer p{
 
   .project .grid-list > li:first-child { grid-column: 1 / 3; }
 
+  /* Stats */
+
+  .stats-list { padding-inline: 60px; }
+
+  .stats-item { padding-inline-start: 20px; }
+
+  .stats-item .item-title { font-size: 4rem; }
+
+
 
 
   /**
@@ -1238,10 +1355,6 @@ footer p{
   .blog-card .card-title { --fs-4: 2.6rem; }
 
 }
-
-
-
-
 
 /**
  * responsive for large than 992px screen
@@ -1328,6 +1441,10 @@ footer p{
     gap: 40px;
   }
 
+  .hero-title{
+    font-size: 45px;
+  }
+
   .hero .wrapper { flex-wrap: nowrap; }
 
   .hero .btn,
@@ -1356,6 +1473,14 @@ footer p{
     --fs-9: 1.8rem;
     padding: 20px 25px;
   }
+
+
+  /* stats */
+  .stats-list { padding-inline: 60px; }
+
+  .stats-item { padding-inline-start: 20px; }
+
+  .stats-item .item-title { font-size: 4rem; }
 
 
 
@@ -1413,10 +1538,6 @@ footer p{
 
 }
 
-
-
-
-
 /**
  * responsive for large than 1200px screen
  */
@@ -1429,20 +1550,10 @@ footer p{
 
   :root {
 
-    /**
-     * typography
-     */
-
     --fs-1: 5.5rem;
     --fs-2: 4.5rem;
 
   }
-
-
-
-  /**
-   * REUSED STYLE
-   */
 
   .container { max-width: 1140px; }
 
@@ -1451,21 +1562,9 @@ footer p{
     margin-inline: auto;
   }
 
-
-
-  /**
-   * HEADER
-   */
-
   .header .container { padding-inline: 30px; }
 
   .navbar-list { gap: 50px; }
-
-
-
-  /**
-   * HERO
-   */
 
   .hero-content {
     display: flex;
@@ -1483,28 +1582,13 @@ footer p{
   }
 
 
-
-  /**
-   * SERVICE
-   */
-
   .service .grid-list { grid-template-columns: repeat(3, 1fr); }
 
   .service-card .h3 { --fs-3: 2rem; }
 
 
-
-  /**
-   * PROJECT
-   */
-
   .filter-btn { padding-inline: 40px; }
 
-
-
-  /**
-   * BLOG
-   */
 
   .blog-list { column-gap: 35px; }
 
@@ -1520,6 +1604,35 @@ footer p{
     margin-block-end: 20px;
   }
 
-  .blog-card .card-title { --fs-4: 2.4rem; }
+  .blog-card .card-title { 
+    --fs-4: 2.4rem;
+  }
 
+  .subscribe-container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+@media screen and (min-width: 568px) {
+  
+  .subscribe__form {
+    width: 470px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .subscribe__bg {
+    background: none;
+    padding: 0;
+  }
+  .subscribe__container {
+    background-color: var(--majorelle-blue);
+    padding: 3.5rem 0;
+  }
+  .subscribe__input {
+    padding: 0 .5rem;
+  }
 }
