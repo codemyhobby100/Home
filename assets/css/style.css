@@ -513,6 +513,12 @@ body {
 
 .service .section-title { margin-block: 30px 60px; }
 
+.service-p{
+  padding: 0px 10px 20px 20px;
+  text-align: center;
+  margin-top: -5rem;
+}
+
 .service-card,
 .service .link-card {
   padding: 45px;
@@ -721,13 +727,12 @@ body {
   margin-block-end: 25px;
 }
 
-.stats-list {
-  display: grid !important;
-  /* grid-template-rows: (2, 1fr); */
+.stats ul {
+  display: grid;
   gap: 25px;
 }
 
-.stats-item {
+.stats li {
   position: relative;
   padding-block: 5px;
   padding-inline-start: 15px;

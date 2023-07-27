@@ -817,6 +817,91 @@ input {
   filter: invert(0.7);
   transition: var(--img-transition);
 }
+/* channels */
+.channel{
+  /* position: relative; */
+  height: 25em;
+  margin-top: -2rem;
+  margin-bottom: 20rem;
+}
+.channels {
+  position: absolute;
+  background-color: #ffffff;
+  width: 80vw;
+  max-width: 41em;
+  min-height: 25em;
+  border-radius: 0.6em;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  margin-top: 15rem;
+  box-shadow: 0 1.8em 3em rgba(1, 17, 39, 0.15);
+  display: flex;
+}
+.testimonial-container {
+  width: 85%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+  padding: 1.8em 1.2em;
+}
+.channels button {
+  font-size: 1.8em;
+  height: 2.2em;
+  width: 2.2em;
+  background-color: #ffffff;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border: none;
+  color: var(--mustard);
+  box-shadow: 0 0 1em rgba(1, 17, 39, 0.25);
+  cursor: pointer;
+  border-radius: 50%;
+}
+button#next {
+  right: -1.1em;
+}
+button#prev {
+  left: -1.1em;
+}
+.testimonial-container p {
+  color: #8c8c90;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 2em;
+  letter-spacing: 0.05em;
+}
+.testimonial-container img {
+  display: block;
+  margin: 1.8em auto 1.25em auto;
+  border-radius: 50%;
+  width: 4.4em;
+}
+.testimonial-container h3 {
+  color: #2d3d67;
+  font-size: 1em;
+  text-align: center;
+}
+.testimonial-container h6 {
+  color: #bcc4da;
+  font-size: 0.9em;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+  text-align: center;
+}
+@media screen and (max-width: 650px) {
+  .channels {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .channels {
+    left: 48%;
+  }
+}
+
 
 /* Footer */
 
@@ -1015,10 +1100,13 @@ footer p{
   position: fixed;
   right: 1rem;
   bottom: -20%;
-  background-color: var(--first-color);
+  font-size: 18px;
+  padding: 16px;
+  background-color: var(--mustard);
+  border-radius: var(--radius-8);
   padding: .5rem;
   display: flex;
-  opacity: .9;
+  opacity: 1;
   z-index: var(--z-tooltip);
   transition: .4s;
 }

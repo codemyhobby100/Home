@@ -62,59 +62,23 @@ const headerActive = function () {
 
 addEventOnElem(window, "scroll", headerActive);
 
-ScrollReveal({
-  reset: true,
-  distance: '60px',
-  duration: 2500,
-  delay: 400,
-});
 
-ScrollReveal().reveal('.hero', { 
-  delay: 400,
-  origin: 'top'
-});
 
-ScrollReveal().reveal('.service', { 
-  delay: 500,
-  origin: 'top'
-});
+const inputs = document.querySelectorAll(".input");
 
-ScrollReveal().reveal('.features', { 
-  delay: 600,
-  origin: 'top'
-});
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
 
-ScrollReveal().reveal('.sponsor', { 
-  delay: 600,
-  origin: 'bottom'
-});
+function blurFunc() {
+  let parent = this.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
+}
 
-ScrollReveal().reveal('.feature', { 
-  delay: 600,
-  origin: 'top'
+inputs.forEach((input) => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
 });
-
-ScrollReveal().reveal('.subscribe', { 
-  delay: 600,
-  origin: 'top'
-});
-// Filter
-$(document).ready(function () {
-  $(".filter-item").click(function () {
-    const value = $(this).attr("data-filter");
-    if (value == "all") {
-      $(".post-box").show("1000");
-    } else {
-      $(".post-box")
-        .not("." + value)
-        .hide("1000");
-      $(".post-box")
-        .filter("." + value)
-        .show("1000");
-    }
-  });
-  $(".filter-item").click(function () {
-    $(this).addClass("active-filter").siblings().removeClass("active-filter");
-  });
-});
-
