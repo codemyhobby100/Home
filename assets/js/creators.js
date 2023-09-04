@@ -120,3 +120,34 @@ window.addEventListener('scroll', scrollActive)
 
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 
+ScrollReveal({
+  reset: true,
+  distance: '60px',
+  duration: 2500,
+  delay: 200,
+});
+
+ScrollReveal().reveal('.home', { 
+  delay: 300,
+  origin: 'top'
+});
+
+ScrollReveal().reveal('.about__data', { 
+  delay: 400,
+  origin: 'left'
+});
+
+ScrollReveal().reveal('.about__img', { 
+  delay: 400,
+  origin: 'right'
+});
+
+ScrollReveal().reveal('.discover', { 
+  delay: 400,
+  origin: 'top'
+});
+
+ScrollReveal().reveal('.channel', { 
+  delay: 400,
+  origin: 'bottom'
+});

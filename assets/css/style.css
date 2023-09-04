@@ -14,7 +14,7 @@
   --raisin-black_90: hsla(240, 8%, 12%, 0.9);
   --raisin-black-1: hsl(240, 8%, 17%);
   --raisin-black-2: hsl(240, 8%, 12%);
-  --majorelle-blue: hsl(287, 100%, 50%);
+  --majorelle-blue: #9933cc;
   --blue-ryb_80: hsla(241, 88%, 60%, 0.8);
   --bittersweet: hsl(0, 100%, 69%);
   --eerie-black: hsl(0, 0%, 13%);
@@ -23,7 +23,7 @@
   --slate-gray: hsl(225, 8%, 48%);
   --cool-gray: hsl(225, 11%, 59%);
   --gainsboro: hsl(217, 16%, 90%);
-  --mustard: #9933cc;
+  --mustard: hsl(47, 100%, 69%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --onyx: hsl(240, 5%, 26%);
@@ -228,6 +228,12 @@ body {
   transition: var(--transition-2);
 }
 
+.center{
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn::before,
 .btn::after {
   right: 0;
@@ -419,7 +425,7 @@ body {
   transition: var(--transition-1);
 }
 
-.navbar-link:is(:hover, :focus) { color: var(--mustard); }
+.navbar-link:is(:hover, :focus) { color: var(--majorelle-blue); }
 
 .overlay {
   position: fixed;
@@ -919,6 +925,24 @@ body {
 
 .blog-card .card-title:is(:hover, :focus) { color: var(--majorelle-blue); }
 
+.first-blog{
+  margin-top: 3rem;
+}
+
+.first-blog .h2{
+  font-size: 40px;
+  padding: 20px 0px;
+}
+
+.first-blog-image img{
+  width: 100%;
+  height: 100%;
+}
+
+.first-blog-content{
+  padding: 30px 25px;
+}
+
 /* Footer */
 
 footer{
@@ -962,7 +986,7 @@ footer{
   left: 0;
   width: 50px;
   height: 2px;
-  background: var(--mustard);
+  background:var(--majorelle-blue);
 }
 
 footer p{

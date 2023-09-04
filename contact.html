@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Form</title>
+    <title>Creators Ideology</title>
+    <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo2.png" type="image/svg+xml">
     <!--=============== REMIXICONS ===============-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!--==================== UNICONS ====================-->
@@ -16,6 +20,16 @@
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+          emailjs.init("V16X-XoiUCA4o9BeB");
+      })();
+    </script>
   </head>
   <body>
 
@@ -45,7 +59,15 @@
             </li>
   
             <li class="navbar-item">
-              <a href="#feature" class="navbar-link" data-nav-link>Brands</a>
+              <a href="brands.html" class="navbar-link" data-nav-link>Brands</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="casestudy.html" class="navbar-link" data-nav-link>Case Study</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="blogpost.html" class="navbar-link" data-nav-link>Blog</a>
             </li>
   
             <li class="navbar-item">
@@ -60,7 +82,7 @@
           <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
         </button>
   
-        <a href="#" class="btn btn-primary has-before has-after">Let’s Connect 👋</a>
+        <a href="contact.html" class="btn btn-primary has-before has-after">Let’s Connect 👋</a>
   
         <div class="overlay" data-nav-toggler data-overlay></div>
   
@@ -72,39 +94,33 @@
       <img src="img/shape.png" class="square" alt="" />
       <div class="form">
         <div class="contact-info">
-          <h3 class="title">Let's get in touch</h3>
+          <h3 class="title">Let's get to know each other</h3>
           <p class="text">
-            Bridging The Gap Between Brands And Influencers Through Genuine And Purpose-Driven Collaborations
+            We value your interest in our unique influencer marketing services, and we're thrilled to connect with you.
           </p>
 
           <div class="info">
             <div class="information">
               <i class='bx bx-location-plus'></i>
-              <p>This section is for the address if necessary</p>
+              <p>1, New Layout, Benin City, Nigeria</p>
             </div>
             <div class="information">
               <i class='bx bx-envelope' ></i>
-              <p>email@email.com</p>
+              <p>Patners@creatorsideology.com</p>
             </div>
             <div class="information">
               <i class='bx bx-phone'></i>
-              <p>0000-111-2223</p>
+              <p>+234-903-145-0450</p>
             </div>
           </div>
 
           <div class="social-media">
             <p>Connect with us :</p>
             <div class="social-icons">
-              <a href="#">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#">
+              <a href="https://instagram.com/creatorsideology?igshid=MzNlNGNkZWQ4Mg==">
                 <i class="fab fa-instagram"></i>
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/company/creators-ideology/">
                 <i class="fab fa-linkedin-in"></i>
               </a>
             </div>
@@ -115,29 +131,50 @@
           <span class="circle one"></span>
           <span class="circle two"></span>
 
-          <form action="index.html" autocomplete="off">
+          <form action="#" onsubmit="SendMail()" id="elements"  autocomplete="off">
+
             <h3 class="title">Contact us</h3>
             <div class="input-container">
-              <input type="text" name="name" class="input" />
-              <label for="">Fullname</label>
-              <span>Fullname</span>
+              <input type="text" name="name" class="input" id="name" required />
+              <label for="">Full Name</label>
+              <span>Full Name</span>
             </div>
+
             <div class="input-container">
-              <input type="email" name="email" class="input" />
+             <!-- <label for="">Let us know what you're interested in</label>
+               <span>Let us know what you're interested in</span> -->
+              <select class="form-select select-input" id="subject" name="account" required>
+                <option value="">Let us know what you're interested in</option>
+                <option value="I want to run influencer marketing campaign for my brand">I want to run influencer marketing campaign for my brand</option>
+                <option value="I am a creator who wants help finding sponsorship opportunities">I am a creator who wants help finding sponsorship opportunities</option>
+              </select>
+            </div>
+
+            <div class="input-container">
+              <input type="email" name="email" id="email" class="input" required/>
               <label for="">Email</label>
               <span>Email</span>
             </div>
+
             <div class="input-container">
-              <input type="tel" name="phone" class="input" />
+              <input type="text" name="company" id="company" class="input" required/>
+              <label for="">Company Name</label>
+              <span>Company Name</span>
+            </div>
+
+            <div class="input-container">
+              <input type="tel" name="phone" id="number" class="input" required/>
               <label for="">Phone</label>
               <span>Phone</span>
             </div>
+
             <div class="input-container textarea">
-              <textarea name="message" class="input"></textarea>
+              <textarea name="text" id="message" class="input" required></textarea>
               <label for="">Message</label>
               <span>Message</span>
             </div>
-            <input type="submit" value="Send" class="btn" />
+
+            <button onclick="SendMail()" type="button"  class="btn">Send</button>
           </form>
         </div>
       </div>

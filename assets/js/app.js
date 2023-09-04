@@ -53,10 +53,10 @@ const backTopBtn = document.querySelector("[data-back-top-btn]");
 const headerActive = function () {
   if (window.scrollY > 80) {
     header.classList.add("active");
-    backTopBtn.classList.add("active");
+    // backTopBtn.classList.add("active");
   } else {
     header.classList.remove("active");
-    backTopBtn.classList.remove("active");
+    // backTopBtn.classList.remove("active");
   }
 }
 
@@ -82,3 +82,56 @@ inputs.forEach((input) => {
   input.addEventListener("focus", focusFunc);
   input.addEventListener("blur", blurFunc);
 });
+
+function SendMail() {
+  var form = document.getElementById("elements");
+
+  if (form.checkValidity()) {
+    var params = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      subject: document.getElementById("subject").value,
+      company: document.getElementById("company").value,
+      number: document.getElementById("number").value,
+      message: document.getElementById("message").value,
+    };
+
+    emailjs.send("service_x2u3083", "template_m8vjedc", params).then(
+      function (res) {
+        swal("Success!","Your message has been successfully sent!", "success");
+        form.reset();
+      },
+      function (error) {
+        alert(error);
+      }
+    );
+  } else {
+    // Form is not valid, do not proceed with submission.    
+    // The browser will display validation messages for required fields.
+    swal("Sorry!", "Please fill the form completely", "error")
+  }
+}
+
+// function SendMail(e){
+  
+//   var params = {
+//     name : document.getElementById("name").value,
+//     email : document.getElementById("email").value,
+//     subject: document.getElementById("subject").value,
+//     company : document.getElementById("company").value,
+//     number : document.getElementById("number").value,
+//     message: document.getElementById("message").value,
+//   }
+  
+//   // e.preventDefault();
+//   emailjs.send("service_x2u3083", "template_m8vjedc", params).then(function (res){
+//     console.log(e);
+//     alert("Your message has been succesfully sent!");
+//     // e.target.reset()
+//   },function(error){
+//     console.log(e);
+
+//     alert(error);
+//   })
+// }
+

@@ -57,6 +57,39 @@ const headerActive = function () {
 addEventOnElem(window, "scroll", headerActive);
 
 
+// Scroll Reveal
+ScrollReveal({
+    reset: true,
+    distance: '60px',
+    duration: 2500,
+    delay: 200,
+});
+
+ScrollReveal().reveal('.hero', { 
+    delay: 300,
+    origin: 'top'
+});
+
+ScrollReveal().reveal('.about-banner', { 
+    delay: 400,
+    origin: 'top'
+});
+
+ScrollReveal().reveal('.about-content', { 
+    delay: 400,
+    origin: 'top'
+});
+
+ScrollReveal().reveal('.stats', { 
+    delay: 400,
+    origin: 'bottom'
+});
+
+ScrollReveal().reveal('.service', { 
+    delay: 400,
+    origin: 'top'
+});
+
 
 /**
  * accordion toggle

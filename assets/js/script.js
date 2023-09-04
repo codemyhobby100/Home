@@ -66,36 +66,36 @@ ScrollReveal({
   reset: true,
   distance: '60px',
   duration: 2500,
-  delay: 400,
+  delay: 300,
 });
 
 ScrollReveal().reveal('.hero', { 
-  delay: 400,
+  delay: 300,
   origin: 'top'
 });
 
 ScrollReveal().reveal('.service', { 
-  delay: 500,
+  delay: 400,
   origin: 'top'
 });
 
 ScrollReveal().reveal('.features', { 
-  delay: 600,
+  delay: 500,
   origin: 'top'
 });
 
 ScrollReveal().reveal('.sponsor', { 
-  delay: 600,
+  delay: 500,
   origin: 'bottom'
 });
 
 ScrollReveal().reveal('.feature', { 
-  delay: 600,
+  delay: 500,
   origin: 'top'
 });
 
 ScrollReveal().reveal('.subscribe', { 
-  delay: 600,
+  delay: 500,
   origin: 'top'
 });
 // Filter
